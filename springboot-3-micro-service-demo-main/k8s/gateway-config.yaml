@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gateway-config
+  labels:
+    app: gateway
+data:
+  SERVER_PORT: "8222"
+  SPRING_CLOUD_GATEWAY_ROUTES_0_URI: http://student:8090
+  SPRING_CLOUD_GATEWAY_ROUTES_1_URI: http://school:8070

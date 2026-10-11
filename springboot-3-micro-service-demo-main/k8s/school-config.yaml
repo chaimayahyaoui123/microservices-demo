@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: school-config
+  labels:
+    app: school
+data:
+  SERVER_PORT: "8070"
+  SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/schools
+  APPLICATION_CONFIG_STUDENTS_URL: http://student:8090/api/v1/students
+  EUREKA_CLIENT_ENABLED: "false"
+  SPRING_JPA_HIBERNATE_DDL_AUTO: create

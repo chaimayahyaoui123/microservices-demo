@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: student-config
+  labels:
+    app: student
+data:
+  SERVER_PORT: "8090"
+  SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/students
+  SPRING_JPA_HIBERNATE_DDL_AUTO: create
