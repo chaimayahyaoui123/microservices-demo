@@ -40,15 +40,28 @@ spec:
                 name: school-config
             - secretRef:
                 name: school-secret
+         
+
+          startupProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8070
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 18
+
           readinessProbe:
             httpGet:
               path: /actuator/health
               port: 8070
-            initialDelaySeconds: 20
             periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+
           livenessProbe:
             httpGet:
               path: /actuator/health
               port: 8070
-            initialDelaySeconds: 30
             periodSeconds: 15
+            timeoutSeconds: 2
+            failureThreshold: 3
