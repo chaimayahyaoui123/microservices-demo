@@ -5,13 +5,14 @@ metadata:
   labels:
     app: gateway
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: gateway
   ports:
     - name: http
       port: 8222
       targetPort: 8222
+      nodePort: 30082
 ---
 apiVersion: apps/v1
 kind: Deployment
