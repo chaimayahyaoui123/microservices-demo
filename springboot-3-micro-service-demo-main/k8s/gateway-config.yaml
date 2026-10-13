@@ -6,6 +6,7 @@ metadata:
     app: gateway
 data:
   SERVER_PORT: "8222"
+  EUREKA_CLIENT_ENABLED: "false"
   SPRING_CLOUD_GATEWAY_ROUTES_0_ID: students
   SPRING_CLOUD_GATEWAY_ROUTES_0_URI: http://student:8090
   SPRING_CLOUD_GATEWAY_ROUTES_0_PREDICATES_0: Path=/api/v1/students/**
